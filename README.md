@@ -1,3 +1,3 @@
-Method
+Method  
 urlEncode(str, mode)
 	
