@@ -1,6 +1,18 @@
+/**
+ * Module dependencies.
+ */
 var iconv = require('iconv-lite');
 
-exports.urlEncode = function(str, mode) {
+exports.urlEncode = urlEncode;
+
+exports.urlDecode = urlDecode;
+
+/**
+ * @param  {String} str 被编码的字符串  
+ * @param  {String} mode 字符编码 
+ * @return {String} 返回编码后字符串
+ */
+function urlEncode(str, mode) {
   var result,
       str = str || '',
       mode = mode || 'utf-8',
@@ -24,9 +36,15 @@ exports.urlEncode = function(str, mode) {
   }
 
   return result;
-};
+}
 
-exports.urlDecode = function(str, mode) {
+/**
+ * 解码方法
+ * @param  {String} str  被解码的字符串
+ * @param  {String} mode 编码模式
+ * @return {String}      返回值
+ */
+function urlDecode(str, mode) {
   var result,
       str = str || '';
       mode = mode || 'utf-8',
@@ -45,5 +63,5 @@ exports.urlDecode = function(str, mode) {
   }
 
   return result;
-};
+}
 
