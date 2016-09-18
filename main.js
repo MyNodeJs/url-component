@@ -20,7 +20,7 @@ function urlEncode(str, mode) {
 
   if(mode == 'utf-8') {
     result = encodeURIComponent(str);    
-  } else if(mode == 'gb2312') {
+  } else if(mode == 'gb2312' || mode == 'gbk') {
     str = iconv.encode(str, 'gbk').toString('Hex');
     while(str.length) {
       var substr = str.substring(0, 2);
